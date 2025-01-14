@@ -16,8 +16,9 @@ def update_comics_json(images_folder="images", output_file="comics.json"):
         if os.path.isdir(folder_path):
             # Get a list of image files (jpg, jpeg, png, gif)
             images = sorted(
-                [f for f in os.listdir(folder_path) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+                [f for f in os.listdir(folder_path) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))], key=lambda x: int(os.path.splitext(x)[0])
             )
+            
             if images:
                 comics[comic_folder] = images
 
