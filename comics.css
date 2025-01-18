@@ -5,22 +5,28 @@ body {
     padding: 0;
     background-color: #2c2c2c; /* Dark grey background */
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use the full viewport height */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Comic viewer container */
 .viewer {
-    width: 100%; /* Full width */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align image to the top */
+    align-items: center;
     position: relative;
-    padding: 20px 0; /* Add spacing above and below the image */
+    overflow: hidden; /* Prevent overflow of content */
 }
 
 /* Display the comic image */
 .viewer img {
-    max-width: 100%; /* Ensure the image doesn't overflow horizontally */
-    height: auto; /* Maintain natural height */
+    max-width: 100%; /* Scale down to fit width if needed */
+    max-height: 100vh; /* Scale down to fit height */
     object-fit: contain; /* Maintain aspect ratio */
 }
 
